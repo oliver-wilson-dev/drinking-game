@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch renders correctly 1`] = `
+<Switch>
+  <Route
+    exact={true}
+    path="test-home-route"
+  >
+    <HomePage />
+  </Route>
+  <Route
+    path="test-about-route"
+  >
+    <AboutPage />
+  </Route>
+  <Route
+    path="test-contact-route"
+  >
+    <ContactPage />
+  </Route>
+</Switch>
+`;

@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<footer
+  className="footer"
+>
+  <div
+    className="columnContainer"
+  >
+    <div
+      className="column"
+    >
+      <h4
+        className="title logoPlaceholder"
+      >
+        LOGO
+      </h4>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="columnSection"
+      >
+        <h4
+          className="title"
+        >
+          CONTACT
+        </h4>
+        <ul
+          className="contactList"
+        >
+          <li>
+            <a
+              className="email"
+              href="mailto:contact@oliverwilson.dev"
+            >
+              contact@oliverwilson.dev
+            </a>
+          </li>
+          <li>
+            <a
+              className="email"
+              href="tel:07580081310"
+            >
+              07580081310
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="columnSection"
+      >
+        <h4
+          className="title"
+        >
+          EXPLORE
+        </h4>
+        <ul
+          className="linksList"
+        >
+          <li
+            className="hover"
+          >
+            <Link
+              className="link"
+              to="test-home-route"
+            >
+              Home
+            </Link>
+          </li>
+          <li
+            className="hover"
+          >
+            <Link
+              className="link"
+              to="test-about-route"
+            >
+              About
+            </Link>
+          </li>
+          <li
+            className="hover"
+          >
+            <Link
+              className="link"
+              to="test-contact-route"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="columnSection"
+      >
+        <h4
+          className="title"
+        >
+          LICENCING
+        </h4>
+        <span
+          className="footerDisclaimerText"
+        >
+          Icons made by
+           
+          <a
+            className="link hover"
+            href="https://www.flaticon.com/authors/freepik"
+            title="Freepik"
+          >
+            Freepik
+          </a>
+           
+           from 
+           
+          <a
+            className="link hover"
+            href="https://www.flaticon.com/"
+            title="Flaticon"
+          >
+            www.flaticon.com
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <hr
+    className="horizontalRule"
+  />
+  <div
+    className="creditAuthorContainer"
+  >
+    <span
+      className="footerDisclaimerText creditAuthor"
+    >
+      The code for this website can be found on
+       
+      <a
+        className="link hover"
+        href="https://github.com/oliver-wilson-dev/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        github
+      </a>
+      .
+    </span>
+    <span
+      className="footerDisclaimerText creditAuthor"
+    >
+      ©2021, Oliver Wilson
+    </span>
+  </div>
+</footer>
+`;

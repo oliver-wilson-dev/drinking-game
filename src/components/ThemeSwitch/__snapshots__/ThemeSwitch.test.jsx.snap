@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeSwitch when the theme is the dark theme should render correctly 1`] = `
+<ThemeSwitch
+  theme={Symbol(DARK_THEME)}
+  toggleTheme={[MockFunction]}
+>
+  <button
+    className="btn show"
+    onClick={[Function]}
+    onTransitionEnd={[Function]}
+    type="button"
+  >
+    <Sun
+      className="sun"
+    />
+  </button>
+</ThemeSwitch>
+`;
+
+exports[`ThemeSwitch when the theme is the dark theme when providing an additional class should render correctly 1`] = `
+<ThemeSwitch
+  className="test-class"
+  theme={Symbol(LIGHT_THEME)}
+  toggleTheme={[MockFunction]}
+>
+  <button
+    className="btn show test-class"
+    onClick={[Function]}
+    onTransitionEnd={[Function]}
+    type="button"
+  >
+    <Moon
+      className="moon"
+    />
+  </button>
+</ThemeSwitch>
+`;
+
+exports[`ThemeSwitch when the theme is the light theme should render correctly 1`] = `
+<ThemeSwitch
+  theme={Symbol(LIGHT_THEME)}
+  toggleTheme={[MockFunction]}
+>
+  <button
+    className="btn show"
+    onClick={[Function]}
+    onTransitionEnd={[Function]}
+    type="button"
+  >
+    <Moon
+      className="moon"
+    />
+  </button>
+</ThemeSwitch>
+`;
+
+exports[`ThemeSwitch when the theme is the light theme when providing an additional class should render correctly 1`] = `
+<ThemeSwitch
+  className="test-class"
+  theme={Symbol(LIGHT_THEME)}
+  toggleTheme={[MockFunction]}
+>
+  <button
+    className="btn show test-class"
+    onClick={[Function]}
+    onTransitionEnd={[Function]}
+    type="button"
+  >
+    <Moon
+      className="moon"
+    />
+  </button>
+</ThemeSwitch>
+`;

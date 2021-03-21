@@ -1,0 +1,8 @@
+@import "../../styles/globalVars.css";
+
+.homeParagraph {
+  margin: 0px 40px 20px 40px;
+  max-width: $max-content-width;
+  text-align: justify;
+  text-justify: inter-word;
+}

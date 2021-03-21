@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary when there are no errors thrown should render correctly 1`] = `
+<ErrorBoundary>
+  <ChildNoError>
+    <h1>
+      Default Child
+    </h1>
+  </ChildNoError>
+</ErrorBoundary>
+`;
+
+exports[`ErrorBoundary when there is an error thrown by a child should render the error UI 1`] = `
+<ErrorBoundary>
+  <div
+    className="errorBoundary"
+  >
+    <h1>
+      Something went wrong
+    </h1>
+    <ErrorIcon
+      className="icon"
+    />
+  </div>
+</ErrorBoundary>
+`;

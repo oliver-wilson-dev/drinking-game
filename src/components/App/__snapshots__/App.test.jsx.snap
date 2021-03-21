@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App when the theme is the dark theme renders correctly 1`] = `
+<div
+  className="dark App"
+>
+  <BrowserRouter>
+    <Navigation />
+    <LoadingSpinner
+      show={false}
+    />
+    <Suspense
+      fallback={
+        <Fallback
+          setLoading={[Function]}
+        />
+      }
+    >
+      <ErrorBoundary>
+        <Switch />
+      </ErrorBoundary>
+    </Suspense>
+    <CookieDisclaimer />
+    <Footer />
+  </BrowserRouter>
+</div>
+`;
+
+exports[`App when the theme is the light theme renders correctly 1`] = `
+<div
+  className="light App"
+>
+  <BrowserRouter>
+    <Navigation />
+    <LoadingSpinner
+      show={false}
+    />
+    <Suspense
+      fallback={
+        <Fallback
+          setLoading={[Function]}
+        />
+      }
+    >
+      <ErrorBoundary>
+        <Switch />
+      </ErrorBoundary>
+    </Suspense>
+    <CookieDisclaimer />
+    <Footer />
+  </BrowserRouter>
+</div>
+`;

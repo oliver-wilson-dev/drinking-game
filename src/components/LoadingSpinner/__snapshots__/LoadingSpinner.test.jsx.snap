@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingSpinner when the component should not show renders correctly 1`] = `
+<Fragment>
+  <div
+    className="wrapper wrapperShow"
+    onClick={[Function]}
+  />
+  <div
+    className="loadingSpinner loadingSpinnerShow"
+  />
+</Fragment>
+`;
+
+exports[`LoadingSpinner when the component should show renders correctly 1`] = `
+<Fragment>
+  <div
+    className="wrapper wrapperShow"
+    onClick={[Function]}
+  />
+  <div
+    className="loadingSpinner loadingSpinnerShow"
+  />
+</Fragment>
+`;

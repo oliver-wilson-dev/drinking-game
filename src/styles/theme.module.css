@@ -1,0 +1,21 @@
+@import "./colours.css";
+
+.light {
+    --background-colour: $background-grey;
+    --background-colour-inverse: $dark-grey;
+    --text-colour: $text-dark-grey;
+    --text-colour-inverse: $text-light-grey;
+    --side-menu-focus: $dark-grey;
+    --loading-spinner: $dark-grey;
+    --loading-spinner-border: rgba($dark-grey, 0.5);
+}
+
+.dark {
+    --background-colour: $dark-grey;
+    --background-colour-inverse: $background-grey;
+    --text-colour: $text-light-grey;
+    --text-colour-inverse: $text-dark-grey;
+    --side-menu-focus: $background-grey;
+    --loading-spinner: $background-grey;
+    --loading-spinner-border: rgba($background-grey, 0.5);
+}

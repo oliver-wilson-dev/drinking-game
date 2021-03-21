@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cookie Disclaimer component when first loaded should render correctly 1`] = `
+<div
+  className="container"
+  onTransitionEnd={[Function]}
+>
+  <div
+    className="positionWrapper"
+  >
+    <Notification
+      className="notificationEmoji notificationElement"
+    />
+    <span
+      className="message text notificationElement"
+    >
+      hello world
+    </span>
+    <Tick
+      className="tick notificationElement"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`Cookie Disclaimer component when first loaded should then apply the loaded class 1`] = `
+<CookieDisclaimerMessage
+  cookiesAccepted={[MockFunction]}
+  message="hello world"
+>
+  <div
+    className="container loaded"
+    onTransitionEnd={[Function]}
+  >
+    <div
+      className="positionWrapper"
+    >
+      <Notification
+        className="notificationEmoji notificationElement"
+      />
+      <span
+        className="message text notificationElement"
+      >
+        hello world
+      </span>
+      <Tick
+        className="tick notificationElement"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+</CookieDisclaimerMessage>
+`;
+
+exports[`Cookie Disclaimer component when first loaded when the user accepts the policy after the transition ends should render null 1`] = `""`;
+
+exports[`Cookie Disclaimer component when first loaded when the user accepts the policy should render correctly 1`] = `
+<div
+  className="container closed"
+  onTransitionEnd={[Function]}
+>
+  <div
+    className="positionWrapper"
+  >
+    <Notification
+      className="notificationEmoji notificationElement"
+    />
+    <span
+      className="message text notificationElement"
+    >
+      hello world
+    </span>
+    <Tick
+      className="tick notificationElement"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

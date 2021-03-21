@@ -1,0 +1,6 @@
+.bodyFixed {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  overflow-y: scroll;
+}

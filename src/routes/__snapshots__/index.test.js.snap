@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes should return the correct routes 1`] = `
+Object {
+  "about": Object {
+    "component": [Function],
+    "route": "/about",
+  },
+  "contact": Object {
+    "component": [Function],
+    "route": "/contact",
+  },
+  "home": Object {
+    "component": [Function],
+    "route": "/",
+  },
+}
+`;

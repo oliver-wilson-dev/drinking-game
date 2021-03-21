@@ -1,0 +1,70 @@
+@import "../../../styles/globalVars.css";
+@import "../../../styles/colours.css";
+
+.navigation {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.navItems {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  cursor: pointer;
+  max-width: $max-content-width;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navItem {
+  display: flex;
+  height: 100%;
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.link {
+  padding: 15px 30px;
+  padding: 15px;
+  text-decoration: none;
+  color: #000000;
+  transition: background-color 0.4s, opacity 0.4s;
+
+  &:hover {
+    background-color: $link-yellow;
+  }
+
+  &--active {
+    background-color: $link-yellow;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .link {
+    padding: 15px 30px;
+  }
+
+  .navItems {
+    justify-content: flex-end;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: $max-content-width;
+    margin: 0 20px;
+  }
+}
