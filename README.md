@@ -1,4 +1,4 @@
-# Drinking Game
+# Sip or Skip
 
 A fun drinking game to play with friends.
 
