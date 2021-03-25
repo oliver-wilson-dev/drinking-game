@@ -18,7 +18,7 @@ class Game {
           index % this.questions.questionsCount
         ));
       index += 1;
-    }, 5000);
+    }, 10000);
   }
 }
 
