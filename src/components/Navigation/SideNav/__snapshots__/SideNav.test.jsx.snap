@@ -52,7 +52,7 @@ exports[`<SideNav/> component should render correctly 1`] = `
           <NavLink
             className="link"
             onClick={[Function]}
-            to="/contact"
+            to="/lobby"
           >
             Contact
           </NavLink>
@@ -140,7 +140,7 @@ exports[`<SideNav/> component when clicking on the burger menu and then clicking
           <NavLink
             className="link"
             onClick={[Function]}
-            to="/contact"
+            to="/lobby"
           >
             <button
               type="button"
@@ -232,7 +232,7 @@ exports[`<SideNav/> component when clicking on the burger menu and then clicking
           <NavLink
             className="link"
             onClick={[Function]}
-            to="/contact"
+            to="/lobby"
           >
             <button
               type="button"
@@ -324,7 +324,7 @@ exports[`<SideNav/> component when clicking on the burger menu should open the s
           <NavLink
             className="link"
             onClick={[Function]}
-            to="/contact"
+            to="/lobby"
           >
             <button
               type="button"

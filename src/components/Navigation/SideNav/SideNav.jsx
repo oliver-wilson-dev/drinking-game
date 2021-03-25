@@ -2,14 +2,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
-import CrossIcon from './assets/cross.svg';
+import CrossIcon from '../../../assets/cross.svg';
 import BurgerMenu from './assets/burgerMenu.svg';
 import { preventScroll, allowScroll } from './utils/overlay';
 import routes from '../../../routes';
 import styles from './SideNav.module.css';
 import ThemeSwitch from '../../../containers/ThemeSwitch';
 
-const { home, about, contact } = routes;
+const { home, names, lobby } = routes;
 
 const ignoreClick = (event) => {
   event.stopPropagation();
@@ -77,7 +77,7 @@ const SideNav = () => {
             </li>
             <li className={styles.menuItem}>
               <NavLink
-                to={about.route}
+                to={names.route}
                 className={styles.link}
                 onClick={toggleShowSideNav}
               >
@@ -86,7 +86,7 @@ const SideNav = () => {
             </li>
             <li className={styles.menuItem}>
               <NavLink
-                to={contact.route}
+                to={lobby.route}
                 className={styles.link}
                 onClick={toggleShowSideNav}
               >

@@ -1,0 +1,13 @@
+.page {
+    margin: 40px;
+}
+
+.text {
+    opacity: 1;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.hide {
+    opacity: 0;
+}

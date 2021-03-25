@@ -115,12 +115,11 @@
 }
 
 .footer {
-  margin-top: 50px;
   width: 100%;
   display: flex;
   padding: 60px 20px 60px 20px;
   box-sizing: border-box;
-  background-color: #003f88;
+  background-color: $dark-navy-blue;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -192,6 +191,10 @@
   }
 }
 
+.loading { 
+  margin-top: 100vh;
+}
+
 @media (min-width: 768px) {
   .columnContainer {
     flex-direction: row;
@@ -216,7 +219,6 @@
   }
 
   .footer {
-    margin-top: 80px;
     padding: 100px 20px;
   }
 

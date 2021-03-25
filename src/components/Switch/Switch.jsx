@@ -2,22 +2,32 @@ import React from 'react';
 import {
   Switch as ReactRouterSwitch,
   Route,
+  Redirect
 } from 'react-router-dom';
+import generateId from '../../helpers/generateId';
 
 import routes from '../../routes';
 
-const { home, about, contact } = routes;
+const {
+  home, names, lobby, game
+} = routes;
 
 const Switch = () => (
   <ReactRouterSwitch>
     <Route exact path={home.route}>
       <home.component />
     </Route>
-    <Route path={about.route}>
-      <about.component />
+    <Route path={names.route}>
+      <names.component />
     </Route>
-    <Route path={contact.route}>
-      <contact.component />
+    <Route path={`${game.route}/:partyID`}>
+      <game.component />
+    </Route>
+    <Route path={`${lobby.route}/:id`}>
+      <lobby.component />
+    </Route>
+    <Route exact path={lobby.route}>
+      <Redirect to={`${lobby.route}/${generateId()}`} />
     </Route>
   </ReactRouterSwitch>
 );

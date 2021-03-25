@@ -6,12 +6,14 @@
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-end;
-  transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
-  background-color: var(--background-colour);
+}
 
-  & div, p, h1, h2, h3, h4, h5, span, a {
-    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
-  }
+.background {
+  min-height: 100vh;
+  width: 100vw;
+  animation: backgroundColor 10s infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
 }
 
 a {
@@ -23,7 +25,14 @@ p {
   font-size: 14px;
 }
 
-p, h1, h2, h3, h4, h5, span, a {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+a {
   color: var(--text-colour);
 }
 
@@ -37,5 +46,31 @@ p, h1, h2, h3, h4, h5, span, a {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes backgroundColor {
+  0% {
+    background-color: #45a3e5;
+  }
+
+  20% {
+    background-color: #66bf39;
+  }
+
+  40% {
+    background-color: #eb670f;
+  }
+
+  60% {
+    background-color: #f35;
+  }
+
+  80% {
+    background-color: #864cbf;
+  }
+
+  100% {
+    background-color: #183cb4;
   }
 }

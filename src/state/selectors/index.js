@@ -1,2 +1,2 @@
 export const getMessage = ({ state }) => state.message;
-export const getTheme = ({ state }) => state.theme;
+export const getPlayers = ({ state }) => state.players;

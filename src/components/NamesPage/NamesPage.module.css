@@ -1,0 +1,102 @@
+@import "../../styles/globalVars.css";
+@import "../../styles/colours.css";
+
+$input-padding-sides: 30px;
+
+.page {
+  margin: 30px 10px;
+  justify-content: space-between;
+  height: calc(100% - $input-padding-sides * 2);
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: $max-content-width;
+}
+
+.input {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-colour);
+  text-transform: uppercase;
+  background-color: transparent;
+  padding: 20px $input-padding-sides;
+  border: solid 3px var(--text-colour);
+
+  &::placeholder {
+    color: var(--text-colour);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.inputContainer {
+  display: flex;
+  margin: 20px 0px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.button {
+  font-weight: 800;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+
+.addPlayerBtn {
+  @extend .button;
+
+  transition: all 0.5s linear;
+  color: var(--text-colour);
+  margin: 20px;
+  width: 100%;
+  max-width: 350px;
+  background-color: transparent;
+  border: solid 2px var(--text-colour);
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.startGameBtnContainer {
+  display: flex;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .startGameBtn {
+    right: 40px;
+  }
+
+  .input {
+    width: calc(100% - $input-padding-sides * 2);
+  }
+
+  .top {
+    width: 600px;
+  }
+
+  .form {
+    margin-bottom: 40px;
+  }
+}

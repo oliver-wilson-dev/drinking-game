@@ -3,7 +3,7 @@
 .light {
     --background-colour: $background-grey;
     --background-colour-inverse: $dark-grey;
-    --text-colour: $text-dark-grey;
+    --text-colour: $text-light-grey;
     --text-colour-inverse: $text-light-grey;
     --side-menu-focus: $dark-grey;
     --loading-spinner: $dark-grey;

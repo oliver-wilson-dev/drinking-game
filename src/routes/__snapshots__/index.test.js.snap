@@ -8,7 +8,7 @@ Object {
   },
   "contact": Object {
     "component": [Function],
-    "route": "/contact",
+    "route": "/lobby",
   },
   "home": Object {
     "component": [Function],

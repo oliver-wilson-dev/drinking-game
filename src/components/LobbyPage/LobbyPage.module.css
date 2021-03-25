@@ -1,0 +1,68 @@
+@import "../../styles/globalVars.css";
+@import "../../styles/colours.css";
+
+.page {
+  max-width: 800px;
+  margin: 10px auto 20px auto;
+}
+
+.contactParagraph {
+  margin: 0px 40px 20px 40px;
+  max-width: $max-content-width;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.button {
+  font-weight: 800;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+  margin-bottom: 15px;
+}
+
+.playBtn {
+  @extend .button;
+  background-color: $dark-navy-blue;
+  border: solid 2px var(--text-colour);
+  box-shadow: 2px 2px 15px 5px $dark-navy-blue;
+  margin: 20px;
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qrCode {
+  margin: 30px;
+  width: 200px;
+  height: 200px;
+}
+
+.text {
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  max-width: 600px;
+  color: var(--text-colour);
+}
+
+.list {
+  
+  & li {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .qrCode {
+    margin: 30px;
+    width: 250px;
+    height: 250px;
+  }
+}

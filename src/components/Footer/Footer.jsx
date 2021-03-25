@@ -6,7 +6,7 @@ import styles from './Footer.module.css';
 import routes from '../../routes';
 import { EMAIL_ADDRESS, GITHUB_PROFILE_URL, PHONE_NUMBER } from './constants';
 
-const { home, about, contact } = routes;
+const { home, names, lobby } = routes;
 
 const Footer = () => (
   <footer className={styles.footer}>
@@ -29,10 +29,10 @@ const Footer = () => (
               <Link className={styles.link} to={home.route}>Home</Link>
             </li>
             <li className={styles.hover}>
-              <Link className={styles.link} to={about.route}>About</Link>
+              <Link className={styles.link} to={names.route}>About</Link>
             </li>
             <li className={styles.hover}>
-              <Link className={styles.link} to={contact.route}>Contact</Link>
+              <Link className={styles.link} to={lobby.route}>Contact</Link>
             </li>
           </ul>
         </div>

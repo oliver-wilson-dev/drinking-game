@@ -1,0 +1,19 @@
+.listItem {
+  display: flex;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 20px;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--text-colour);
+  justify-content: flex-start;
+}
+
+.cross {
+  width: 20px;
+  margin-right: 30px;
+  fill: var(--text-colour);
+  padding: 10px;
+  flex-shrink: 0;
+}

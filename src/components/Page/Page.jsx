@@ -1,6 +1,11 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './Page.module.css';
 
-const Page = ({ children }) => <div className={styles.page}>{children}</div>;
+const Page = ({ children, className }) => (
+  <div className={cn(styles.page, className)}>
+    {children}
+  </div>
+);
 
 export default Page;

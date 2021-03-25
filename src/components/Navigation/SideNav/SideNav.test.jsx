@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import SideNav from './index';
-import ThemeSwitch from '../../../containers/ThemeSwitch';
+
 import styles from './SideNav.module.css';
 import { preventScroll, allowScroll } from './utils/overlay';
 
@@ -12,7 +12,7 @@ jest.mock('./utils/overlay', () => ({
   allowScroll: jest.fn()
 }));
 
-jest.mock('./assets/cross.svg', () => {
+jest.mock('../../../assets/cross.svg', () => {
   const CrossIcon = (props) => <button type="button" {...props} />;
 
   return CrossIcon;

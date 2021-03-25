@@ -1,27 +1,12 @@
-const express = require('express');
-const path = require('path');
-const compression = require('compression');
-const { DEFAULT_PORT, ONE_HOUR_MS } = require('./constants');
+const Server = require('./Server');
+const { DEFAULT_PORT } = require('./constants');
 const logAppRunning = require('./logAppRunning');
+const { expressApp, websocket } = require('./initialization');
 
-const app = express();
-
-const pathToBuild = path.join(__dirname, '../build');
-
-// compress all responses
-app.use(compression());
-
-app.use(express.static(pathToBuild, { maxAge: ONE_HOUR_MS }));
-
-app.get('/*', (req, res) => {
-  const pathToIndex = path.join(pathToBuild, 'index.html');
-
-  res.set('Content-Type', 'text/html');
-  res.set('Cache-Control', `public, max-age=${ONE_HOUR_MS}`);
-
-  res.sendFile(pathToIndex);
-});
+expressApp();
+websocket();
 
 const PORT = process.env.PORT || DEFAULT_PORT;
 
-app.listen(PORT, logAppRunning({ PORT }));
+Server.httpServer.listen(PORT);
+logAppRunning({ PORT });
