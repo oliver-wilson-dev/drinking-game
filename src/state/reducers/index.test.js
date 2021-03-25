@@ -1,6 +1,5 @@
 import reducer, { defaultState } from './index';
 import { COOKIES_ACCEPTED } from '../actionTypes';
-import { DARK_THEME, LIGHT_THEME } from '../../styles/constants';
 
 describe('reducer', () => {
   describe('when no state is provided', () => {
