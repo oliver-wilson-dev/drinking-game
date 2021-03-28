@@ -6,6 +6,8 @@ const NamesPage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkN
 const LobbyPage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "LobbyPage" */'../containers/LobbyPage') });
 const GamePage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "GamePage" */'../components/GamePage') });
 
+const partyID = 'partyID';
+
 const routes = {
   home: {
     route: '/',
@@ -17,10 +19,16 @@ const routes = {
   },
   lobby: {
     route: '/lobby',
+    params: {
+      partyID
+    },
     component: LobbyPage
   },
   game: {
     route: '/game',
+    params: {
+      partyID
+    },
     component: GamePage
   },
 };

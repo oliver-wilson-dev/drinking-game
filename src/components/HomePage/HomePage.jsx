@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Page from '../Page';
+import Link from '../Link';
 import styles from './HomePage.module.css';
 
 import routes from '../../routes';
@@ -27,10 +27,9 @@ const HomePage = () => {
           placeholder="enter party ID"
         />
         <Link
+          className={styles.codeLink}
           to={`${routes.game.route}/${inputVal}`}
-          className={cn(styles.btn, styles.text, styles.codeBtn, {
-            [styles.disabled]: inputVal.length !== MAX_ID_LENGTH
-          })}
+          disabled={inputVal.length !== MAX_ID_LENGTH}
         >
           Go!
         </Link>

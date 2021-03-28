@@ -6,6 +6,7 @@ import Input from '../Input';
 import PlayerCount from '../PlayerCount/PlayerCount';
 import SubmitNames from '../SubmitNames';
 import useNamesPage from './hooks/useNamesPage';
+import Button from '../Button/Button';
 
 const NamesPage = ({ players, updatePlayers }) => {
   const {
@@ -32,7 +33,13 @@ const NamesPage = ({ players, updatePlayers }) => {
               disabled={maxPlayers}
               maxLength={20}
             />
-            <button className={styles.addPlayerBtn} type="submit" disabled={maxPlayers || !inputValue}>Add player</button>
+            <Button
+              className={styles.addPlayerBtn}
+              type="submit"
+              disabled={maxPlayers || !inputValue}
+            >
+              Add player
+            </Button>
           </div>
           <PlayerCount players={players} />
         </form>

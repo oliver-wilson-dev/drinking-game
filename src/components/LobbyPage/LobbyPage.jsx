@@ -1,29 +1,28 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import QRCode from 'qrcode.react';
 import cn from 'classnames';
 import axios from 'axios';
 import Page from '../Page';
+import Link from '../Link';
 import styles from './LobbyPage.module.css';
 import routes from '../../routes';
 
 const LobbyPage = ({ players }) => {
-  const { id } = useParams();
+  const { partyID } = useParams();
 
   useEffect(() => {
-    console.log('Creating a game for the following players', ...players);
-
     axios.post(`${window.location.origin}/create-game`, {
-      partyID: id,
+      partyID,
     });
-  }, [players, id]);
+  }, [players, partyID]);
 
   return (
     <Page className={styles.page}>
       <h1>
         Your party ID is:
         <br />
-        {id}
+        <code>{partyID}</code>
       </h1>
       <p className={styles.text}>
         If your friends would like to see the questions on their device too
@@ -41,9 +40,8 @@ const LobbyPage = ({ players }) => {
           level="Q"
         />
         <Link
-          to={`${routes.game.route}/${id}`}
+          to={`${routes.game.route}/${partyID}`}
           className={styles.playBtn}
-          type="button"
         >
           Let&apos;s play!
         </Link>

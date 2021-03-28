@@ -1,0 +1,31 @@
+@import "../../styles/colours.css";
+
+.button {
+  padding: 15px 20px;
+  border: solid 2px var(--text-colour);
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  transition: all 0.2s ease-in;
+  color: var(--text-colour);
+  background-color: transparent;
+  font-size: 30px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 10px 20px $dark-navy-blue;
+  transition: all 0.2s linear;
+
+  &:active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 10px $dark-navy-blue;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

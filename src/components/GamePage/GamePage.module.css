@@ -1,13 +1,97 @@
+@import "../../styles/colours.css";
+
 .page {
-    margin: 40px;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 40px;
+  position: absolute;
+  justify-content: space-between;
+}
+
+.partyID {
+  font-size: 18px;
 }
 
 .text {
-    opacity: 1;
-
-    transition: all 0.3s ease-in-out;
+  opacity: 1;
+  font-size: 20px;
+  font-weight: 800;
+  transition: all 0.3s ease-in-out;
 }
 
 .hide {
-    opacity: 0;
+  opacity: 0;
+}
+
+.progBarContainer {
+  width: 100%;
+  max-width: 350px;
+  max-width: 350px;
+  height: 15px;
+  display: flex;
+}
+
+$border-radius: 10px;
+
+.progBarBackground {
+  flex-grow: 1;
+  display: flex;
+  background-color: var(--text-colour);
+  border-radius: $border-radius;
+  box-shadow: 0 10px 20px $dark-navy-blue;
+}
+.progBarProgress {
+  height: 100%;
+  width: 100%;
+  background-color: $dark-navy-blue;
+  border-radius: $border-radius;
+  transition: width 0.5s ease;
+
+  &1 {
+    width: 10%;
+  }
+  &2 {
+    width: 20%;
+  }
+  &3 {
+    width: 30%;
+  }
+  &4 {
+    width: 40%;
+  }
+  &5 {
+    width: 50%;
+  }
+  &6 {
+    width: 60%;
+  }
+  &7 {
+    width: 70%;
+  }
+  &8 {
+    width: 80%;
+  }
+  &9 {
+    width: 90%;
+  }
+  &10 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .partyID {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 28px;
+  }
+
+  .page {
+    max-width: 768px;
+    margin: 40px auto;
+  }
 }

@@ -28,7 +28,8 @@ const expressApp = () => {
   });
 
   app.post('/create-game', ({ body: { partyID } }, res) => {
-    const emitter = io.in(partyID);
+    // Join a room with the party ID
+    const emitter = io.to(partyID);
 
     GamesManager.createGame({ partyID, emitter });
 

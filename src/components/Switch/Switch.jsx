@@ -20,10 +20,10 @@ const Switch = () => (
     <Route path={names.route}>
       <names.component />
     </Route>
-    <Route path={`${game.route}/:partyID`}>
+    <Route path={`${game.route}/:${game.params.partyID}`}>
       <game.component />
     </Route>
-    <Route path={`${lobby.route}/:id`}>
+    <Route path={`${lobby.route}/:${lobby.params.partyID}`}>
       <lobby.component />
     </Route>
     <Route exact path={lobby.route}>

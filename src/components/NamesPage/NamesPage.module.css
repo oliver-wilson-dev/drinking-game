@@ -43,29 +43,9 @@ $input-padding-sides: 30px;
   flex-direction: column;
 }
 
-.button {
-  font-weight: 800;
-  padding: 15px 20px;
-  border-radius: 10px;
-  text-transform: uppercase;
-  transition: all 0.2s ease-in;
-}
-
 .addPlayerBtn {
-  @extend .button;
-
   transition: all 0.5s linear;
-  color: var(--text-colour);
   margin: 20px;
-  width: 100%;
-  max-width: 350px;
-  background-color: transparent;
-  border: solid 2px var(--text-colour);
-
-  &:disabled {
-    pointer-events: none;
-    opacity: 0.5;
-  }
 }
 
 .form {

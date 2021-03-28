@@ -2,37 +2,14 @@
 
 .page {
   height: 100vh;
-  background-color: transparent;
   display: flex;
-  justify-content: space-evenly;
   margin-top: 0px;
+  background-color: transparent;
+  justify-content: space-evenly;
 }
 
-.btn {
-  padding: 15px 20px;
-  border: solid 2px var(--text-colour);
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: 800;
-  transition: all 0.2s ease-in;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
-.startGameBtn {
-  @extend .btn;
-}
-
-.codeBtn {
-  @extend .btn;
+.codeLink {
   margin: 20px 0px;
-}
-
-.disabled {
-  pointer-events: none;
-  opacity: 0.5;
 }
 
 .text {
@@ -46,6 +23,7 @@
 .input {
   padding: 20px;
 
+  /* Hide the arrows at the side of the number input */
   /* Chrome, Safari, Edge, Opera */
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {

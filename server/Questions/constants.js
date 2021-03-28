@@ -6,7 +6,8 @@ const questions = [
   'What’s Your Favorite TV Show?',
   'What’s The Strangest Thing In Your Refrigerator?',
   'Have You Ever Been To A Five Star Resort?',
-  'Would You Rather Have 10 Hobbies Or One Passion?'
+  'Would You Rather Have 10 Hobbies Or One Passion?',
+  'Would You Rather Have 10 Hobbies Or One Passion? What’s Your Favorite TV Show? If You Had Three Wishes, What Would You Wish For?'
 ];
 
 module.exports = { questions };
