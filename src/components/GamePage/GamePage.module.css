@@ -5,9 +5,18 @@
   top: 0px;
   right: 0px;
   bottom: 0px;
-  margin: 40px;
+  margin: 10px 30px 40px 30px;
   position: absolute;
   justify-content: space-between;
+}
+
+.width {
+  width: 100%;
+  max-width: 350px;
+}
+
+.header {
+  @extend .width;
 }
 
 .partyID {
@@ -19,6 +28,7 @@
   font-size: 20px;
   font-weight: 800;
   transition: all 0.3s ease-in-out;
+  line-height: 30px;
 }
 
 .hide {
@@ -26,9 +36,7 @@
 }
 
 .progBarContainer {
-  width: 100%;
-  max-width: 350px;
-  max-width: 350px;
+  @extend .width;
   height: 15px;
   display: flex;
 }
@@ -88,10 +96,11 @@ $border-radius: 10px;
 
   .text {
     font-size: 28px;
+    line-height: 40px;
   }
 
   .page {
     max-width: 768px;
-    margin: 40px auto;
+    margin: 10px auto 40px auto;
   }
 }

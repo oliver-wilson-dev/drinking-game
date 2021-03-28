@@ -27,9 +27,9 @@ const GamePage = () => {
 
   return (
     <Page className={styles.page}>
-      <div>
+      <header className={styles.header}>
         <h1 className={styles.partyID}>
-          The party ID is:
+          Party ID -
           {' '}
           <code>{partyID}</code>
         </h1>
@@ -38,7 +38,7 @@ const GamePage = () => {
             <span className={cn(styles.progBarProgress, styles[`progBarProgress${seconds}`])} />
           </span>
         </div>
-      </div>
+      </header>
       <p
         className={cn(styles.text, {
           [styles.hide]: hide
