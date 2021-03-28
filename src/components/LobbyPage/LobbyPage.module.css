@@ -13,39 +13,35 @@
   text-justify: inter-word;
 }
 
-.button {
-  font-weight: 800;
-  padding: 15px 20px;
-  border-radius: 10px;
-  text-transform: uppercase;
-  transition: all 0.2s ease-in;
-  margin-bottom: 15px;
-}
-
-.playBtn {
-  @extend .button;
+.playLink {
   background-color: $dark-navy-blue;
   border: solid 2px var(--text-colour);
   box-shadow: 2px 2px 15px 5px $dark-navy-blue;
   margin: 20px;
+  margin-bottom: 15px;
+  padding: 15px 40px;
 }
 
-.ctaContainer {
+.textAndQR {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.title {
+  margin-bottom: 0px;
+}
+
 .qrCode {
   margin: 30px;
-  width: 200px;
-  height: 200px;
+  height: 150px;
+  width: 150px;
 }
 
 .text {
   margin: 20px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   max-width: 600px;
   color: var(--text-colour);
@@ -64,5 +60,14 @@
     margin: 30px;
     width: 250px;
     height: 250px;
+  }
+  
+  .text {
+    font-size: 20px;
+  }
+
+  .textAndQR {
+    display: flex;
+    flex-direction: row;
   }
 }

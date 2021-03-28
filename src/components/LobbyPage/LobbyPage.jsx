@@ -19,32 +19,32 @@ const LobbyPage = ({ players }) => {
 
   return (
     <Page className={styles.page}>
-      <h1>
+      <h1 className={styles.title}>
         Your party ID is:
         <br />
         <code>{partyID}</code>
       </h1>
-      <p className={styles.text}>
-        If your friends would like to see the questions on their device too
-        then they can either:
-      </p>
-      <ul className={cn(styles.list, styles.text)}>
-        <li>enter the party ID at the home page</li>
-        <li>scan the QR code</li>
-      </ul>
-      <div className={styles.ctaContainer}>
-        <QRCode
-          className={styles.qrCode}
-          value={window.location.href}
-          renderAs="svg"
-          level="Q"
-        />
-        <Link
-          to={`${routes.game.route}/${partyID}`}
-          className={styles.playBtn}
-        >
-          Let&apos;s play!
-        </Link>
+      <QRCode
+        className={styles.qrCode}
+        value={window.location.href}
+        renderAs="svg"
+        level="Q"
+      />
+      <Link
+        to={`${routes.game.route}/${partyID}`}
+        className={styles.playLink}
+      >
+        Let&apos;s play!
+      </Link>
+      <div>
+        <p className={styles.text}>
+          If your friends would like to see the questions on their device too
+          then they can either:
+        </p>
+        <ul className={cn(styles.list, styles.text)}>
+          <li>enter the party ID at the home page</li>
+          <li>scan the QR code</li>
+        </ul>
       </div>
     </Page>
   );
