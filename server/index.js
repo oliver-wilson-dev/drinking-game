@@ -8,5 +8,4 @@ websocket();
 
 const PORT = process.env.PORT || DEFAULT_PORT;
 
-Server.httpServer.listen(PORT);
-logAppRunning({ PORT });
+Server.httpServer.listen(PORT, () => logAppRunning({ PORT }));

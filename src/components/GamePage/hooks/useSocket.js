@@ -1,49 +1,60 @@
-import { useState, useEffect, useCallback } from 'react';
+/* eslint-disable no-unused-expressions */
+import {
+  useState, useEffect, useCallback
+} from 'react';
 import { useParams } from 'react-router-dom';
 import { io } from 'socket.io-client';
+
+const socket = io();
 
 const useSocket = () => {
   const { partyID } = useParams();
   const [question, setQuestion] = useState();
   const [hide, setHide] = useState(false);
   const [seconds, setSeconds] = useState(false);
-  const [socket] = useState(io({
-    query: { partyID }
-  }));
+  const [playerCount, setPlayerCount] = useState();
 
   useEffect(() => {
-    socket.emit('JOIN_GAME', { partyID });
-  }, [partyID, socket]);
+    if (socket) {
+      socket.emit('JOIN_GAME', { partyID });
+    }
+  }, [partyID]);
 
   useEffect(() => {
-    socket.on('NEXT_QUESTION', (newQuestion) => {
-      setHide(true);
-      setTimeout(() => {
-        setQuestion(newQuestion);
+    if (socket) {
+      socket.on('NEXT_QUESTION', (newQuestion) => {
+        setHide(true);
+        setTimeout(() => {
+          setQuestion(newQuestion);
+          setHide(false);
+        }, 1000);
+      });
+
+      socket.on('CURRENT_QUESTION', (currentQuestion) => {
+        setHide(true);
+        setQuestion(currentQuestion);
         setHide(false);
-      }, 1000);
-    });
+      });
 
-    socket.on('CURRENT_QUESTION', (currentQuestion) => {
-      setHide(true);
-      setQuestion(currentQuestion);
-      setHide(false);
-    });
+      socket.on('SET_SECONDS', (seconds) => {
+        setSeconds(seconds);
+      });
 
-    socket.on('SET_SECONDS', (seconds) => {
-      console.log(seconds);
-      setSeconds(seconds);
-    });
-  }, [partyID, socket]);
+      socket.on('PLAYER_COUNT', (playerCount) => {
+        setPlayerCount(playerCount);
+      });
+    }
+  }, [partyID]);
 
   const skipQuestion = useCallback(() => {
     socket.emit('SKIP_QUESTION', { partyID });
-  }, [partyID, socket]);
+  }, [partyID]);
 
   return {
     hide,
     seconds,
     question,
+    playerCount,
     skipQuestion,
   };
 };

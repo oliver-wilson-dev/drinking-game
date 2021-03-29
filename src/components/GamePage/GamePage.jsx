@@ -3,7 +3,8 @@ import cn from 'classnames';
 import { useParams } from 'react-router-dom';
 import Page from '../Page';
 import useSocket from './hooks/useSocket';
-import Button from '../Button/Button';
+import Button from '../Button';
+import ProgressBar from '../ProgressBar';
 
 import styles from './GamePage.module.css';
 
@@ -12,6 +13,7 @@ const GamePage = () => {
     hide,
     seconds,
     question,
+    playerCount,
     skipQuestion
   } = useSocket();
 
@@ -28,16 +30,18 @@ const GamePage = () => {
   return (
     <Page className={styles.page}>
       <header className={styles.header}>
+        {partyID && playerCount && (
         <h1 className={styles.partyID}>
-          Party ID -
-          {' '}
-          <code>{partyID}</code>
-        </h1>
-        <div className={styles.progBarContainer}>
-          <span className={styles.progBarBackground}>
-            <span className={cn(styles.progBarProgress, styles[`progBarProgress${seconds}`])} />
+          <span>
+            Party ID -
+            {' '}
+            <code>{partyID}</code>
           </span>
-        </div>
+          {' '}
+          <span>{`${playerCount} player${playerCount > 1 ? 's' : ''}`}</span>
+        </h1>
+        )}
+        <ProgressBar seconds={seconds} />
       </header>
       <p
         className={cn(styles.text, {

@@ -5,15 +5,27 @@ const { io } = Server;
 
 const websocket = () => {
   io.on('connection', (socket) => {
-    socket.join(socket.handshake.query.partyID);
+    console.log('connection', socket.id);
 
     socket.on('JOIN_GAME', ({ partyID }) => {
-      console.log('socket on JOIN_GAME');
-      GamesManager.getGame({ partyID }).emitCurrentQuestion();
+      socket.join(partyID);
+      const game = GamesManager.getGame({ partyID });
+
+      game.emitCurrentQuestion();
+
+      game.incrementPlayerCount();
     });
 
     socket.on('SKIP_QUESTION', ({ partyID }) => {
       GamesManager.getGame({ partyID }).skipQuestion();
+    });
+
+    socket.on('connect_error', (err) => {
+      console.log(`connect_error due to ${err.message}`);
+    });
+
+    socket.on('disconnect', (reason) => {
+      // ...
     });
   });
 };

@@ -9,14 +9,28 @@ class Game {
     this.secondsInterval = undefined;
     this.currentQuestion = undefined;
     this.seconds = 10;
+    this.playerCount = 0;
 
     console.info('creating game with ID: ', partyID);
 
     this.loopThroughQuestions();
   }
 
+  emitPlayerCount = () => {
+    this.emitter.emit('PLAYER_COUNT', this.playerCount);
+  }
+
+  incrementPlayerCount = () => {
+    this.playerCount += 1;
+    this.emitPlayerCount();
+  }
+
+  decrementPlayerCount = () => {
+    this.playerCount -= 1;
+    this.emitPlayerCount();
+  }
+
   emitCurrentQuestion = () => {
-    console.log('emitting current question: ', this.currentQuestion);
     this.emitter.emit(
       'CURRENT_QUESTION',
       this.currentQuestion
