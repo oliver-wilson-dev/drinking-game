@@ -27,7 +27,7 @@ const expressApp = () => {
     res.status(200).send(`created new game with ID: ${partyID}`);
   });
 
-  app.get('/get-game', ({ body: { partyID } }, res) => {
+  app.get('/get-game', ({ query: { partyID } }, res) => {
     const game = GamesManager.getGame({ partyID });
 
     if (game) {

@@ -28,13 +28,15 @@ const HomePage = () => {
     setPlaceholder('Enter party ID');
   }, [setPlaceholder]);
 
-  const enterPartyId = useCallback((event) => {
+  const enterPartyId = useCallback(async (event) => {
     event.preventDefault();
-    setInputVal('');
-    setPlaceholder('Wrong party ID');
+    const game = await getGame({ partyID: inputVal });
 
-    getGame();
-  }, [setInputVal, getGame]);
+    if (!game) {
+      setInputVal('');
+      setPlaceholder('Wrong party ID');
+    }
+  }, [setInputVal, getGame, setPlaceholder, inputVal]);
 
   return (
     <Page className={styles.page}>

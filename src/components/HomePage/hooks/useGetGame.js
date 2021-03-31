@@ -1,15 +1,24 @@
+/* eslint-disable consistent-return */
 import { useState } from 'react';
 import axios from 'axios';
 
 const useGetGame = () => {
   const [gameExists, setGameExists] = useState(false);
 
-  const getGame = async () => {
-    const game = await axios.get(`${window.location.origin}/get-game`);
+  const getGame = async ({ partyID }) => {
+    try {
+      const game = await axios.get(`${window.location.origin}/get-game`, {
+        params: {
+          partyID
+        }
+      });
 
-    console.log(game);
-    if (game?.data) {
-      setGameExists(true);
+      if (game?.data) {
+        setGameExists(true);
+        return game;
+      }
+    } catch (error) {
+      setGameExists(false);
     }
   };
 
