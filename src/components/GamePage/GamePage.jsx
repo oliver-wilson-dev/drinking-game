@@ -5,6 +5,8 @@ import Page from '../Page';
 import useSocket from './hooks/useSocket';
 import Button from '../Button';
 import ProgressBar from '../ProgressBar';
+import Pause from './assets/pause.svg';
+import Play from './assets/play.svg';
 import routes from '../../routes';
 
 import styles from './GamePage.module.css';
@@ -55,7 +57,10 @@ const GamePage = () => {
           {question}
         </p>
         <div className={styles.btnContainer}>
-          <Button className={styles.pauseBtn} onClick={togglePauseState}>{paused ? 'Resume' : 'Pause'}</Button>
+          <Button className={styles.pauseBtn} onClick={togglePauseState}>
+            <span>{paused ? 'Resume' : 'Pause'}</span>
+            {paused ? <Play className={styles.icon} /> : <Pause className={styles.icon} />}
+          </Button>
           <Button className={styles.skipBtn} onClick={skipQuestion}>Skip</Button>
         </div>
       </Page>

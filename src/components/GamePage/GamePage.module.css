@@ -51,12 +51,23 @@
 .pauseBtn {
   margin-bottom: 30px;
   background-color: $dark-navy-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .skipBtn {
   background-color: $electric-yellow;
   border: 4px solid $dark-navy-blue;
   color: $dark-navy-blue;
+}
+
+.icon {
+  fill: var(--text-colour);
+  width: 30px;
+  position: absolute;
+  right: 20px;
 }
 
 @media (min-width: 768px) {
