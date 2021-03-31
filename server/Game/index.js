@@ -1,4 +1,5 @@
 const Questions = require('../Questions');
+const Timer = require('./Timer');
 
 class Game {
   constructor({ partyID, emitter }) {
@@ -7,13 +8,25 @@ class Game {
     this.index = 0;
     this.questionInterval = undefined;
     this.secondsInterval = undefined;
-    this.currentQuestion = undefined;
-    this.seconds = 10;
+    this.currentQuestion = this.questions.getQuestion(this.index % this.questions.questionsCount);
     this.playerCount = 0;
 
     console.info('creating game with ID: ', partyID);
 
-    this.loopThroughQuestions();
+    this.startGame();
+  }
+
+  tickCallback = (seconds) => {
+    this.emitter.emit(
+      'SET_SECONDS',
+      seconds
+    );
+  };
+
+  startGame = () => {
+    this.timer = new Timer({ tickCallback: this.tickCallback, emitQuestion: this.emitQuestion });
+
+    this.timer.start();
   }
 
   emitPlayerCount = () => {
@@ -30,76 +43,62 @@ class Game {
     this.emitPlayerCount();
   }
 
-  emitCurrentQuestion = () => {
-    this.emitter.emit(
-      'CURRENT_QUESTION',
-      this.currentQuestion
-    );
-  }
-
   incrementIndex = () => {
     this.index += 1;
   }
 
-  emitQuestion = (index) => {
-    this.currentQuestion = this.questions.getQuestion(index);
+  emitQuestion = () => {
+    this.currentQuestion = this.questions.getQuestion(this.index % this.questions.questionsCount);
 
     this.emitter.emit(
       'NEXT_QUESTION',
       this.currentQuestion
     );
 
-    this.countdown(10);
-
     this.incrementIndex();
   }
 
-  countdown = (startSeconds) => {
-    this.seconds = startSeconds;
+  emitCurrentQuestion = () => {
+    this.emitter.emit(
+      'CURRENT_QUESTION',
+      this.currentQuestion
+    );
 
-    if (this.secondsInterval) {
-      clearInterval(this.secondsInterval);
-    }
+    this.incrementIndex();
 
-    const tick = () => {
+    if (this.timer.paused) {
       this.emitter.emit(
-        'SET_SECONDS',
-        this.seconds
+        'PAUSED'
       );
-
-      this.seconds -= 1;
-    };
-
-    tick();
-
-    this.secondsInterval = setInterval(tick, 1000);
-
-    if (this.seconds === 0) {
-      console.log('clearing seconds interval');
-      clearInterval(this.secondsInterval);
     }
-  }
 
-  loopThroughQuestions = () => {
-    const emitQuestion = () => {
-      this.emitQuestion(this.index % this.questions.questionsCount);
-    };
-
-    emitQuestion();
-
-    this.questionInterval = setInterval(() => {
-      emitQuestion();
-    }, 10000);
+    this.tickCallback(this.timer.secondsRemaining);
   }
 
   skipQuestion = () => {
-    // stop current ticker
-    clearInterval(this.questionInterval);
-
     this.incrementIndex();
 
-    // continue looping
-    this.loopThroughQuestions();
+    this.timer.restart();
+
+    this.emitter.emit(
+      'RESUMED'
+    );
+  }
+
+  pause = () => {
+    this.emitter.emit(
+      'PAUSED'
+    );
+
+    this.timer.pause();
+  }
+
+  resume = () => {
+    this.emitter.emit(
+      'RESUMED'
+    );
+
+    this.timer.resume();
   }
 }
 

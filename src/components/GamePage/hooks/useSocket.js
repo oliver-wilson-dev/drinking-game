@@ -13,11 +13,27 @@ const useSocket = () => {
   const [hide, setHide] = useState(false);
   const [seconds, setSeconds] = useState(false);
   const [playerCount, setPlayerCount] = useState();
+  const [paused, setPaused] = useState(false);
+  const [gameUndefined, setGameUndefined] = useState(false);
+
+  const togglePauseState = () => {
+    if (paused) {
+      socket.emit('RESUME_GAME', { partyID });
+    }
+
+    if (!paused) {
+      socket.emit('PAUSE_GAME', { partyID });
+    }
+
+    setPaused(!paused);
+  };
 
   useEffect(() => {
     if (socket) {
       socket.emit('JOIN_GAME', { partyID });
     }
+
+    return () => socket.emit('LEAVE_GAME', { partyID });
   }, [partyID]);
 
   useEffect(() => {
@@ -43,6 +59,18 @@ const useSocket = () => {
       socket.on('PLAYER_COUNT', (playerCount) => {
         setPlayerCount(playerCount);
       });
+
+      socket.on('PAUSED', () => {
+        setPaused(true);
+      });
+
+      socket.on('RESUMED', () => {
+        setPaused(false);
+      });
+
+      socket.on('GAME_UNDEFINED', () => {
+        setGameUndefined(true);
+      });
     }
   }, [partyID]);
 
@@ -52,10 +80,14 @@ const useSocket = () => {
 
   return {
     hide,
+    paused,
+    partyID,
     seconds,
     question,
     playerCount,
     skipQuestion,
+    gameUndefined,
+    togglePauseState
   };
 };
 
