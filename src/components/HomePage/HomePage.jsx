@@ -10,6 +10,7 @@ import Input from '../Input';
 
 import styles from './HomePage.module.css';
 import useGetGame from './hooks/useGetGame';
+import Logo from '../Logo';
 
 const HomePage = () => {
   const [placeholder, setPlaceholder] = useState('Enter party ID');
@@ -41,7 +42,7 @@ const HomePage = () => {
   return (
     <Page className={styles.page}>
       <div className={styles.top}>
-        <h1 className={cn(styles.title, styles.text)}>Let&apos;s party 😜🍻</h1>
+        <Logo />
         <Input
           type="number"
           value={inputVal}

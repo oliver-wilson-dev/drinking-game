@@ -46,6 +46,7 @@ $input-padding-sides: 30px;
 .addPlayerBtn {
   transition: all 0.5s linear;
   margin: 20px;
+  background-color: transparent;;
 }
 
 .form {
