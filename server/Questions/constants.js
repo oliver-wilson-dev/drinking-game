@@ -1,5 +1,5 @@
 const questions = [
-  'Who? What? When? Where?. The next person to ask a question drinks 4 times',
+  'Who? What? When? Where? The next person to ask a question drinks 4 times',
   'Would you rather have a dog with a cat’s personality or a cat with a dog’s personality? Losing category drinks 3 times',
   'The youngest person in the room gives out 2 sips',
   'Would you rather win one million dollars today or 10 million dollars in ten years? Losing category drinks 2 times',
