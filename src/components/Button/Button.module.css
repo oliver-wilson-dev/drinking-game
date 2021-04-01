@@ -7,8 +7,6 @@
   text-transform: uppercase;
   font-weight: 800;
   transition: all 0.2s ease-in;
-  color: var(--text-colour);
-  background-color: transparent;
   font-size: 30px;
   width: 100%;
   max-width: 350px;

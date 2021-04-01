@@ -31,7 +31,7 @@ const NamesPage = ({ players, updatePlayers }) => {
               value={inputValue}
               onChange={inputOnChange}
               disabled={maxPlayers}
-              maxLength={20}
+              maxLength={12}
             />
             <Button
               className={styles.addPlayerBtn}

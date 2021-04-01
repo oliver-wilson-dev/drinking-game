@@ -41,8 +41,8 @@ const HomePage = () => {
 
   return (
     <Page className={styles.page}>
+      <Logo />
       <div className={styles.top}>
-        <Logo />
         <Input
           type="number"
           value={inputVal}

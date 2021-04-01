@@ -2,7 +2,7 @@
 @import "../../styles/colours.css";
 
 .page {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   margin-top: 0px;
   background-color: transparent;
@@ -13,6 +13,7 @@
   margin: 20px 0px;
   max-width: unset;
   background-color: $dark-navy-blue;
+  color: var(--text-colour);
 }
 
 .text {

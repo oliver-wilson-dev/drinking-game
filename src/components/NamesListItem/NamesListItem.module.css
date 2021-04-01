@@ -8,6 +8,8 @@
   text-transform: uppercase;
   color: var(--text-colour);
   justify-content: flex-start;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 .cross {

@@ -22,6 +22,10 @@ const useNamesPage = ({ players, updatePlayers }) => {
     updatePlayers({ players: players.filter((name) => name !== playerName) });
   }, [updatePlayers, players]);
 
+  const inputOnChange = useCallback((event) => {
+    setInputValue(event.target.value);
+  }, [setInputValue]);
+
   useEffect(() => {
     const maxPlayers = isMaxPlayers(players);
     setMaxPlayers(maxPlayers);
@@ -31,10 +35,6 @@ const useNamesPage = ({ players, updatePlayers }) => {
     const enoughPlayers = minPlayersReached(players);
     setNotEnoughPlayers(enoughPlayers);
   }, [setNotEnoughPlayers, players]);
-
-  const inputOnChange = useCallback((event) => {
-    setInputValue(event.target.value);
-  }, [setInputValue]);
 
   return {
     inputValue,

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
 import cn from 'classnames';
 import Page from '../Page';
@@ -23,14 +23,6 @@ const GamePage = () => {
     gameUndefined,
     togglePauseState,
   } = useSocket();
-
-  useEffect(() => {
-    /*
-      When on the home page the user enters the partyID on iOS
-      page can be slightly scrolled down as it moves the focused element into the view of the user.
-    */
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <>
