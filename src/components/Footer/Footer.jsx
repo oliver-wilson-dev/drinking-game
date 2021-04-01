@@ -5,6 +5,7 @@ import cn from 'classnames';
 import styles from './Footer.module.css';
 import routes from '../../routes';
 import { EMAIL_ADDRESS, GITHUB_PROFILE_URL, PHONE_NUMBER } from './constants';
+import Logo from '../Logo';
 
 const { home, names, lobby } = routes;
 
@@ -12,7 +13,7 @@ const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.columnContainer}>
       <div className={styles.column}>
-        <h4 className={cn(styles.title, styles.logoPlaceholder)}>LOGO</h4>
+        <Logo className={cn(styles.title, styles.logoPlaceholder)} />
       </div>
       <div className={styles.column}>
         <div className={styles.columnSection}>
