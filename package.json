@@ -14,7 +14,7 @@
     "lint:fix": "npm run lint -- --fix",
     "server": "node ./server/index.js",
     "server:build": "npm run build && npm run server",
-    "pr-checks": "npm run test && npm run lint && npm run build",
+    "pr-checks": "npm run lint && npm run build",
     "start": "npm run server"
   },
   "dependencies": {
