@@ -5,7 +5,7 @@ const Fallback = ({ setLoading }) => {
     setLoading(true);
 
     return () => setLoading(false);
-  }, []);
+  }, [setLoading]);
 
   return null;
 };

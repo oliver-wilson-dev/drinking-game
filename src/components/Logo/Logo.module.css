@@ -1,0 +1,9 @@
+@import "../../styles/colours.css";
+
+.title {
+  margin: 0px;
+  font-size: 60px;
+  text-shadow: 4px 3px 0px $dark-navy-blue, 9px 8px 0px rgb(0 0 0 / 15%);
+  text-transform: uppercase;
+  color: var(--text-colour);;
+}

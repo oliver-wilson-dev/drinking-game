@@ -1,5 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import { COOKIES_ACCEPTED, TOGGLE_THEME } from '../actionTypes';
+import { COOKIES_ACCEPTED, UPDATE_PLAYERS } from '../actionTypes';
 
 export const cookiesAccepted = () => (dispatch) => dispatch({ type: COOKIES_ACCEPTED });
-export const toggleTheme = () => (dispatch) => dispatch({ type: TOGGLE_THEME });
+export const updatePlayers = ({ players }) => (dispatch) => dispatch({
+  type: UPDATE_PLAYERS,
+  payload: { players }
+});

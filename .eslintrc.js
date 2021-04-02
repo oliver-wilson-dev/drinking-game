@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
     'airbnb',
+    'plugin:react-hooks/recommended'
   ],
   plugins: [
     'jest'
@@ -32,7 +33,8 @@ module.exports = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'react-hooks/exhaustive-deps': 2
   },
   overrides: [{
     files: ['**/*.test*'],

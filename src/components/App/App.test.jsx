@@ -58,8 +58,8 @@ jest.mock('../../containers/CookieDisclaimer', () => {
 });
 
 const HomePage = () => null;
-const AboutPage = () => null;
-const ContactPage = () => null;
+const NamesPage = () => null;
+const LobbyPage = () => null;
 
 jest.mock('../../routes', () => ({
   home: {
@@ -67,11 +67,11 @@ jest.mock('../../routes', () => ({
     route: 'test-home-route'
   },
   about: {
-    component: AboutPage,
+    component: NamesPage,
     route: 'test-about-route'
   },
   contact: {
-    component: ContactPage,
+    component: LobbyPage,
     route: 'test-contact-route'
   }
 }));

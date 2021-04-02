@@ -5,14 +5,15 @@ import cn from 'classnames';
 import styles from './Footer.module.css';
 import routes from '../../routes';
 import { EMAIL_ADDRESS, GITHUB_PROFILE_URL, PHONE_NUMBER } from './constants';
+import Logo from '../Logo';
 
-const { home, about, contact } = routes;
+const { home, names, lobby } = routes;
 
 const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.columnContainer}>
       <div className={styles.column}>
-        <h4 className={cn(styles.title, styles.logoPlaceholder)}>LOGO</h4>
+        <Logo className={cn(styles.title, styles.logoPlaceholder)} />
       </div>
       <div className={styles.column}>
         <div className={styles.columnSection}>
@@ -29,10 +30,10 @@ const Footer = () => (
               <Link className={styles.link} to={home.route}>Home</Link>
             </li>
             <li className={styles.hover}>
-              <Link className={styles.link} to={about.route}>About</Link>
+              <Link className={styles.link} to={names.route}>About</Link>
             </li>
             <li className={styles.hover}>
-              <Link className={styles.link} to={contact.route}>Contact</Link>
+              <Link className={styles.link} to={lobby.route}>Contact</Link>
             </li>
           </ul>
         </div>

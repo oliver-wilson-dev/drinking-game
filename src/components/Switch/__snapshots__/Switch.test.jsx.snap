@@ -11,12 +11,12 @@ exports[`Switch renders correctly 1`] = `
   <Route
     path="test-about-route"
   >
-    <AboutPage />
+    <NamesPage />
   </Route>
   <Route
     path="test-contact-route"
   >
-    <ContactPage />
+    <LobbyPage />
   </Route>
 </Switch>
 `;

@@ -1,0 +1,12 @@
+.playerCount {
+  margin: 0px 20px 20px 20px;
+  font-size: 20px;
+  text-align: start;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.playerCountNumber {
+  font-weight: 600;
+}

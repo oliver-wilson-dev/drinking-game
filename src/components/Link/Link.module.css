@@ -1,0 +1,25 @@
+@import "../../styles/colours.css";
+
+.link {
+  font-weight: 800;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: var(--text-colour);
+  transition: all 0.2s ease-in;
+  border: solid 2px var(--text-colour);
+
+  background-color: $dark-navy-blue;
+  border: solid 2px var(--text-colour);
+  box-shadow: 2px 2px 15px 5px $dark-navy-blue;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  transform: scale(1);
+}

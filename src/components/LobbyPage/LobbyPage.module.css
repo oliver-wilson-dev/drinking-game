@@ -1,0 +1,73 @@
+@import "../../styles/globalVars.css";
+@import "../../styles/colours.css";
+
+.page {
+  max-width: 800px;
+  margin: 10px auto 20px auto;
+}
+
+.contactParagraph {
+  margin: 0px 40px 20px 40px;
+  max-width: $max-content-width;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.playLink {
+  background-color: $dark-navy-blue;
+  border: solid 2px var(--text-colour);
+  box-shadow: 2px 2px 15px 5px $dark-navy-blue;
+  margin: 20px;
+  margin-bottom: 15px;
+  padding: 15px 40px;
+}
+
+.textAndQR {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 0px;
+}
+
+.qrCode {
+  margin: 30px;
+  height: 150px;
+  width: 150px;
+}
+
+.text {
+  margin: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  max-width: 600px;
+  color: var(--text-colour);
+}
+
+.list {
+  
+  & li {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .qrCode {
+    margin: 30px;
+    width: 250px;
+    height: 250px;
+  }
+  
+  .text {
+    font-size: 20px;
+  }
+
+  .textAndQR {
+    display: flex;
+    flex-direction: row;
+  }
+}

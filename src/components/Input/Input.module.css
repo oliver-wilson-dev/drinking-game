@@ -1,0 +1,16 @@
+.input {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-colour);
+  text-transform: uppercase;
+  background-color: transparent;
+  border: solid 3px var(--text-colour);
+
+  &::placeholder {
+    color: var(--text-colour);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}

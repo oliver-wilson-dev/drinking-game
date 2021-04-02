@@ -3,5 +3,5 @@ const ONE_HOUR_MS = 3600000;
 
 module.exports = {
   DEFAULT_PORT,
-  ONE_HOUR_MS
+  ONE_HOUR_MS,
 };

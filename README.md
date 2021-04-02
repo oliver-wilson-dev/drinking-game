@@ -1,6 +1,6 @@
-# Website template
+# Sip or Skip
 
-A template for future website projects so that I don't have to set everything up over and over again.
+A fun drinking game to play with friends.
 
 ## Table of Contents
 

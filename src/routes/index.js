@@ -1,21 +1,35 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import useLazyLoadComponent from '../helpers/lazyLoadComponent';
 
 const HomePage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "HomePage" */'../components/HomePage') });
-const AboutPage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "AboutPage" */'../components/AboutPage') });
-const ContactPage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "ContactPage" */'../components/ContactPage') });
+const NamesPage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "NamesPage" */'../containers/NamesPage') });
+const LobbyPage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "LobbyPage" */'../containers/LobbyPage') });
+const GamePage = useLazyLoadComponent({ importFn: () => import(/* webpackChunkName: "GamePage" */'../components/GamePage') });
+
+const partyID = 'partyID';
 
 const routes = {
   home: {
     route: '/',
     component: HomePage
   },
-  about: {
-    route: '/about',
-    component: AboutPage
+  names: {
+    route: '/names',
+    component: NamesPage
   },
-  contact: {
-    route: '/contact',
-    component: ContactPage
+  lobby: {
+    route: '/lobby',
+    params: {
+      partyID
+    },
+    component: LobbyPage
+  },
+  game: {
+    route: '/game',
+    params: {
+      partyID
+    },
+    component: GamePage
   },
 };
 
