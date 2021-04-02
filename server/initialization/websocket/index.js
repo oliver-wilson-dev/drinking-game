@@ -23,6 +23,14 @@ const websocket = () => {
       }
     });
 
+    socket.on('END_GAME', ({ partyID }) => {
+      const game = GamesManager.getGame({ partyID });
+      if (game) {
+        game.stop();
+        GamesManager.removeGame({ partyID });
+      }
+    });
+
     socket.on('SKIP_QUESTION', ({ partyID }) => {
       GamesManager.getGame({ partyID }).skipQuestion();
     });

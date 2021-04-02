@@ -23,10 +23,19 @@ class Game {
     );
   };
 
+  endGameTimeout = () => {
+    this.stop();
+
+    this.emitter.emit('END_GAME');
+  }
+
   startGame = () => {
     this.timer = new Timer({ tickCallback: this.tickCallback, emitQuestion: this.emitQuestion });
 
     this.timer.start();
+    const oneMinMs = 1000 * 60;
+    const tenMinsMs = oneMinMs * 10;
+    setTimeout(this.endGameTimeout, tenMinsMs);
   }
 
   emitPlayerCount = () => {

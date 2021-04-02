@@ -14,7 +14,7 @@ const useSocket = () => {
   const [seconds, setSeconds] = useState(false);
   const [playerCount, setPlayerCount] = useState();
   const [paused, setPaused] = useState(false);
-  const [gameUndefined, setGameUndefined] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
   const togglePauseState = () => {
     if (paused) {
@@ -69,7 +69,12 @@ const useSocket = () => {
       });
 
       socket.on('GAME_UNDEFINED', () => {
-        setGameUndefined(true);
+        setRedirect(true);
+      });
+
+      socket.on('END_GAME', () => {
+        socket.emit('END_GAME', { partyID });
+        setRedirect(true);
       });
     }
   }, [partyID]);
@@ -83,10 +88,10 @@ const useSocket = () => {
     paused,
     partyID,
     seconds,
+    redirect,
     question,
     playerCount,
     skipQuestion,
-    gameUndefined,
     togglePauseState
   };
 };

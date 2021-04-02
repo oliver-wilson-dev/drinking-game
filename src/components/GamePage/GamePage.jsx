@@ -17,10 +17,10 @@ const GamePage = () => {
     paused,
     partyID,
     seconds,
+    redirect,
     question,
     playerCount,
     skipQuestion,
-    gameUndefined,
     togglePauseState,
   } = useSocket();
 
@@ -56,7 +56,7 @@ const GamePage = () => {
           <Button className={styles.skipBtn} onClick={skipQuestion}>Skip</Button>
         </div>
       </Page>
-      {gameUndefined && <Redirect to={routes.home.route} />}
+      {redirect && <Redirect to={routes.home.route} />}
     </>
   );
 };
