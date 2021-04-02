@@ -9,7 +9,8 @@ $input-padding-sides: 30px;
   background-color: rgba(40, 40, 40, 0.5);
   padding: 15px;
   border-radius: 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   margin: 25px;
 }
 
@@ -22,6 +23,9 @@ $input-padding-sides: 30px;
 }
 
 .input {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 350px;
   font-size: 20px;
   font-weight: 800;
   color: var(--text-colour);
@@ -70,7 +74,17 @@ $input-padding-sides: 30px;
   max-width: 100%;
 }
 
+.namesListWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
+  .page {
+    max-width: 600px;
+    margin: 25px auto;
+  }
+
   .startGameBtn {
     right: 40px;
   }

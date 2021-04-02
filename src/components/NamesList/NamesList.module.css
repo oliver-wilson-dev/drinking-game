@@ -1,7 +1,11 @@
+@import '../NamesListItem/NamesListItem.module.css';
+
 .list {
   margin: 0px;
   padding: 0px;
   list-style-type: none;
   display: flex;
   flex-direction: column-reverse;
+  position: relative;
+  right: $cross-margin-right;
 }

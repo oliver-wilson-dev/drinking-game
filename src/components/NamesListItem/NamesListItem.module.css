@@ -1,3 +1,5 @@
+$cross-margin-right: 30px;
+
 .listItem {
   display: flex;
   font-size: 30px;
@@ -14,7 +16,7 @@
 
 .cross {
   width: 20px;
-  margin-right: 30px;
+  margin-right: $cross-margin-right;
   fill: var(--text-colour);
   padding: 10px;
   flex-shrink: 0;

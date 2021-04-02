@@ -43,7 +43,9 @@ const NamesPage = ({ players, updatePlayers }) => {
           </div>
           <PlayerCount players={players} />
         </form>
-        <NamesList players={players} removePlayer={removePlayer} />
+        <div className={styles.namesListWrapper}>
+          <NamesList players={players} removePlayer={removePlayer} />
+        </div>
       </div>
       <div className={styles.startGameBtnContainer}>
         <SubmitNames notEnoughPlayers={notEnoughPlayers} />
