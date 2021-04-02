@@ -1,4 +1,4 @@
-const DEFAULT_PORT = 5000;
+const DEFAULT_PORT = 3000;
 const ONE_HOUR_MS = 3600000;
 
 module.exports = {

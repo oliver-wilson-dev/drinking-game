@@ -2,7 +2,7 @@
   "name": "sip-or-skip",
   "version": "0.0.1",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3000",
   "scripts": {
     "analyze-bundle": "npm run build && npx source-map-explorer 'build/static/js/*.js'",
     "dev:client": "node scripts/dev.js",
