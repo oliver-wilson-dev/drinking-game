@@ -7,7 +7,7 @@ import routes from '../../routes';
 import { EMAIL_ADDRESS, GITHUB_PROFILE_URL, PHONE_NUMBER } from './constants';
 import Logo from '../Logo';
 
-const { home, names, lobby } = routes;
+const { home, names } = routes;
 
 const Footer = () => (
   <footer className={styles.footer}>
@@ -30,10 +30,7 @@ const Footer = () => (
               <Link className={styles.link} to={home.route}>Home</Link>
             </li>
             <li className={styles.hover}>
-              <Link className={styles.link} to={names.route}>About</Link>
-            </li>
-            <li className={styles.hover}>
-              <Link className={styles.link} to={lobby.route}>Contact</Link>
+              <Link className={styles.link} to={names.route}>Create new game</Link>
             </li>
           </ul>
         </div>
