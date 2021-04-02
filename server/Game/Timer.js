@@ -41,6 +41,10 @@ class Timer {
     }
 
     start = this.resume;
+
+    stop = () => {
+      clearInterval(this.timerId);
+    }
 }
 
 module.exports = Timer;

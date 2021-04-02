@@ -100,6 +100,10 @@ class Game {
 
     this.timer.resume();
   }
+
+  stop = () => {
+    this.timer.stop();
+  }
 }
 
 module.exports = Game;

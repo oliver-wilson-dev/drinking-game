@@ -11,6 +11,10 @@ const leaveGame = ({ socket }) => {
 
     if (game) {
       game.decrementPlayerCount();
+      if (game.playerCount < 1) {
+        game.stop();
+        GamesManager.removeGame({ partyID });
+      }
     }
 
     UserManager.removeUser({ id: socket.id });
