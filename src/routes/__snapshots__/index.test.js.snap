@@ -2,17 +2,27 @@
 
 exports[`routes should return the correct routes 1`] = `
 Object {
-  "about": Object {
+  "game": Object {
     "component": [Function],
-    "route": "/about",
-  },
-  "contact": Object {
-    "component": [Function],
-    "route": "/lobby",
+    "params": Object {
+      "partyID": "partyID",
+    },
+    "route": "/game",
   },
   "home": Object {
     "component": [Function],
     "route": "/",
+  },
+  "lobby": Object {
+    "component": [Function],
+    "params": Object {
+      "partyID": "partyID",
+    },
+    "route": "/lobby",
+  },
+  "names": Object {
+    "component": [Function],
+    "route": "/names",
   },
 }
 `;

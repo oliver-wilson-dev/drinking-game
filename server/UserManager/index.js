@@ -13,11 +13,11 @@ class UserManager {
     }
   }
 
-    removeUser = ({ id }) => {
-      this.users[id] = undefined;
-    }
+  removeUser = ({ id }) => {
+    this.users[id] = undefined;
+  }
 
-    getUser = ({ id }) => this.users[id]
+  getUser = ({ id }) => this.users[id]
 }
 
 module.exports = new UserManager();

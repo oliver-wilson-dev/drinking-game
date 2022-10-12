@@ -96,3 +96,5 @@ This application is hosted via the Google Cloud Platform.
 Some files related to this are `app.yaml`, `.gcloudignore` and `./github/workflows/release.yaml`. They are all required.
 
 For information on the Github action used to deploy the application and start it on the Google Cloud Platform, [click here](https://github.com/google-github-actions/setup-gcloud/tree/master/appengine-deploy).
+
+The reason the `npm run start` script exists is purely because Google Cloud Platform requires that the applications running in that environment are started all by the same command, so we have to conform to that.
